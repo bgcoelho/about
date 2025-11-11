@@ -2,6 +2,7 @@ import { Navigation } from "@/components/Navigation";
 import { ProjectCard } from "@/components/ProjectCard";
 import { Mail, Linkedin, Github } from "lucide-react";
 import { Card, CardContent } from "@/components/ui/card";
+import profilePhoto from "@/assets/bruno.png";
 
 const Home = () => {
   const projects = [
@@ -59,13 +60,22 @@ const Home = () => {
       
       <main className="max-w-4xl mx-auto px-6 py-16 space-y-20">
         {/* Hero Section */}
-        <section className="space-y-4">
-          <h1 className="text-5xl md:text-6xl font-light text-foreground tracking-tight">
-            Bruno Graca Coelho
-          </h1>
-          <p className="text-xl text-muted-foreground max-w-2xl">
-            Product Manager / Problem solver · Head of Data · MBA@UChicago Booth
-          </p>
+        <section className="flex items-start justify-between gap-8 flex-wrap">
+          <div className="space-y-4 flex-1 min-w-[300px]">
+            <h1 className="text-5xl md:text-6xl font-light text-foreground tracking-tight">
+              Bruno Graca Coelho
+            </h1>
+            <p className="text-xl text-muted-foreground max-w-2xl">
+              Product Manager / Problem solver · Head of Data · MBA@UChicago Booth
+            </p>
+          </div>
+          <div className="flex-shrink-0">
+            <img 
+              src={profilePhoto} 
+              alt="Bruno Graca Coelho" 
+              className="w-28 h-32 object-cover rounded-lg shadow-md"
+            />
+          </div>
         </section>
 
         {/* About Section */}
