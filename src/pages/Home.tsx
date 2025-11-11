@@ -26,11 +26,6 @@ const Home = () => {
       description: "AI-based solution that reads email content/unstructured data from UWRs communications with back office support teams. Reconciles reviewed submission/bind data database data",
       link: "/data-extractor",
     },
-    {
-      title: "My prompt library",
-      description: "Curated collection of AI and LLM prompts for data, strategy, and product applications",
-      link: "/prompts",
-    },
   ];
 
   const academics = [
@@ -131,6 +126,28 @@ const Home = () => {
               </Card>
             ))}
           </div>
+        </section>
+
+        {/* Prompt Library Section */}
+        <section className="space-y-8">
+          <h2 className="text-3xl font-light text-foreground">Resources</h2>
+          <Card className="bg-card border-border hover:shadow-md transition-shadow">
+            <CardContent className="p-6">
+              <h3 className="text-lg font-semibold text-foreground mb-2">
+                My Prompt Library
+              </h3>
+              <p className="text-sm text-muted-foreground mb-4">
+                Curated collection of AI and LLM prompts for data, strategy, and product applications
+              </p>
+              <a
+                href="/prompts"
+                className="inline-flex items-center gap-2 text-primary hover:text-primary/80 transition-colors font-medium"
+              >
+                <span>Explore Prompts</span>
+                <span>→</span>
+              </a>
+            </CardContent>
+          </Card>
         </section>
 
         {/* Contact Section */}
