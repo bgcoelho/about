@@ -90,10 +90,7 @@ const Home = () => {
 
         {/* Projects Section */}
         <section className="space-y-8">
-          <div className="space-y-2">
-            <h2 className="text-3xl font-light text-foreground">AI Product Portfolio & Experiments</h2>
-            <p className="text-muted-foreground">Exploring the intersection of AI, data, and product innovation</p>
-          </div>
+          <h2 className="text-3xl font-light text-foreground">AI Product Portfolio & Experiments</h2>
           <div className="grid gap-4">
             {projects.map((project, index) => (
               <ProjectCard key={index} {...project} />
