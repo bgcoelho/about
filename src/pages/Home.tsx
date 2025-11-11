@@ -9,22 +9,22 @@ const Home = () => {
     {
       title: "AI/LLM-based adjusted earnings calculator & predictor",
       description: "AI-based solution that reviews financial statements, extracts relevant information, calculates adjusted earnings over 10 years timeline and projects future earnings",
-      link: "https://github.com/bgcoelho/ai_earnings_predictor",
+      link: "/earnings-calculator",
     },
     {
       title: "AI/LLM-based Insurance Underwriting (UWR) risk decision engine",
       description: "AI-based insurance Underwriting (UWR) risk engine that uses user key information, enhanced with internal databases and public information to assess risk",
-      link: "https://github.com/bgcoelho/ai-uwr-risk-predictor",
+      link: "/underwriting-risk",
     },
     {
       title: "AI/ML-based Stock's alpha (excess returns) analytics/predictor",
       description: "AI based solution that performs firm analysis and provides concise investment advice, based on public return information determines alpha and beta, reviews SEC 10Ks and strategic/market analysis",
-      link: "https://github.com/bgcoelho/ai-alpha-analytics",
+      link: "/alpha-analytics",
     },
     {
       title: "AI/LLM-based solution that extracts data from unstructured email/documents",
       description: "AI-based solution that reads email content/unstructured data from UWRs communications with back office support teams. Reconciles reviewed submission/bind data database data",
-      link: "https://github.com/bgcoelho/ai_data_accuracy_validator",
+      link: "/data-extractor",
     },
     {
       title: "My prompt library",
