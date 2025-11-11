@@ -73,7 +73,7 @@ const Home = () => {
             <img 
               src={profilePhoto} 
               alt="Bruno Graca Coelho" 
-              className="w-32 h-36 object-contain rounded-lg"
+              className="w-24 h-32 object-cover object-top rounded-lg shadow-md"
             />
           </div>
         </section>
