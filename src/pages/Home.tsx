@@ -12,11 +12,6 @@ const Home = () => {
       link: "/earnings-calculator",
     },
     {
-      title: "AI/LLM-based Insurance Underwriting (UWR) risk decision engine",
-      description: "AI-based insurance Underwriting (UWR) risk engine that uses user key information, enhanced with internal databases and public information to assess risk",
-      link: "/underwriting-risk",
-    },
-    {
       title: "AI/ML-based Stock's alpha (excess returns) analytics/predictor",
       description: "AI based solution that performs firm analysis and provides concise investment advice, based on public return information determines alpha and beta, reviews SEC 10Ks and strategic/market analysis",
       link: "/alpha-analytics",
@@ -25,6 +20,11 @@ const Home = () => {
       title: "AI/LLM-based solution that extracts data from unstructured email/documents",
       description: "AI-based solution that reads email content/unstructured data from UWRs communications with back office support teams. Reconciles reviewed submission/bind data database data",
       link: "/data-extractor",
+    },
+    {
+      title: "AI/LLM-based Insurance Underwriting (UWR) risk decision engine",
+      description: "AI-based insurance Underwriting (UWR) risk engine that uses user key information, enhanced with internal databases and public information to assess risk",
+      link: "/underwriting-risk",
     },
   ];
 
