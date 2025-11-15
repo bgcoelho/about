@@ -1,5 +1,6 @@
 import { Navigation } from "@/components/Navigation";
 import { ProjectCard } from "@/components/ProjectCard";
+import { Link } from "react-router-dom";
 import { Mail, Linkedin, Github } from "lucide-react";
 import { Card, CardContent } from "@/components/ui/card";
 import profilePhoto from "@/assets/bruno.png";
@@ -140,13 +141,13 @@ const Home = () => {
                 <p className="text-sm text-muted-foreground mb-4">
                   Curated collection of AI and LLM prompts for data, strategy, and product applications
                 </p>
-                <a
-                  href="/prompts"
+                <Link
+                  to="/prompts"
                   className="inline-flex items-center gap-2 text-primary hover:text-primary/80 transition-colors font-medium"
                 >
                   <span>Explore Prompts</span>
                   <span>→</span>
-                </a>
+                </Link>
               </CardContent>
             </Card>
             <Card className="bg-card border-border hover:shadow-md transition-shadow">
