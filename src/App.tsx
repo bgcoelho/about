@@ -3,6 +3,7 @@ import { Toaster as Sonner } from "@/components/ui/sonner";
 import { TooltipProvider } from "@/components/ui/tooltip";
 import { QueryClient, QueryClientProvider } from "@tanstack/react-query";
 import { BrowserRouter, Routes, Route } from "react-router-dom";
+
 import Home from "./pages/Home";
 import PromptLibrary from "./pages/PromptLibrary";
 import EarningsCalculator from "./pages/EarningsCalculator";
@@ -18,7 +19,8 @@ const App = () => (
     <TooltipProvider>
       <Toaster />
       <Sonner />
-      <BrowserRouter basename="/about">
+      {/* IMPORTANT: Remove basename for a custom domain */}
+      <BrowserRouter>
         <Routes>
           <Route path="/" element={<Home />} />
           <Route path="/prompts" element={<PromptLibrary />} />
@@ -26,7 +28,7 @@ const App = () => (
           <Route path="/underwriting-risk" element={<UnderwritingRisk />} />
           <Route path="/alpha-analytics" element={<AlphaAnalytics />} />
           <Route path="/data-extractor" element={<DataExtractor />} />
-          {/* ADD ALL CUSTOM ROUTES ABOVE THE CATCH-ALL "*" ROUTE */}
+          {/* Catch-all route */}
           <Route path="*" element={<NotFound />} />
         </Routes>
       </BrowserRouter>
@@ -35,3 +37,4 @@ const App = () => (
 );
 
 export default App;
+
