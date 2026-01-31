@@ -1,7 +1,6 @@
 import { Navigation } from "@/components/Navigation";
 import { ProjectCard } from "@/components/ProjectCard";
 import { Link } from "react-router-dom";
-import { Mail, Linkedin, Github } from "lucide-react";
 import { Card, CardContent } from "@/components/ui/card";
 import profilePhoto from "@/assets/bruno.png";
 
@@ -43,10 +42,10 @@ const Home = () => {
   ];
 
   const certifications = [
-    { name: "Microsoft Azure", details: "Fundamentals" },
-    { name: "Databricks", details: "Fundamentals" },
-    { name: "Amazon Web Services", details: "Fundamentals" },
-    { name: "Google Cloud", details: "Fundamentals" },
+    { name: "Microsoft Azure", details: "Azure Fundamentals (AZ-900), Azure AI Fundamentals (AI-900)" },
+    { name: "Databricks", details: "Databricks Lakehouse Fundamentals; Databricks Machine Learning Associate" },
+    { name: "Amazon Web Services", details: "AWS Certified Cloud Practitioner (CLF-C02)" },
+    { name: "Google Cloud", details: "Cloud Computing Fundamentals; Infrastructure in Google Cloud; Networking and Security in Google Cloud; Data, ML, and AI in Google Cloud" },
     { name: "PMI, PMP", details: "Project Management Professional" },
   ];
 
@@ -86,7 +85,7 @@ const Home = () => {
 
         {/* Projects Section */}
         <section className="space-y-4">
-          <h2 className="text-3xl font-light text-foreground">AI Product Portfolio & Experiments</h2>
+          <h2 className="text-3xl font-light text-foreground">AI Product portfolio & experiments</h2>
           <div className="grid gap-4">
             {projects.map((project, index) => (
               <ProjectCard key={index} {...project} />
@@ -159,7 +158,7 @@ const Home = () => {
                   Research publication on wireless sensor networks and local aggregation techniques for Internet of Things applications
                 </p>
                 <a
-                  href="https://www.scitepress.org/PublicationsDetail.aspx?ID=hGUOwZL0J3c=&t=1"
+                  href="https://www.scitepress.org/Papers/2014/47104/"
                   target="_blank"
                   rel="noopener noreferrer"
                   className="inline-flex items-center gap-2 text-primary hover:text-primary/80 transition-colors font-medium"
@@ -169,38 +168,6 @@ const Home = () => {
                 </a>
               </CardContent>
             </Card>
-          </div>
-        </section>
-
-        {/* Contact Section */}
-        <section className="space-y-4">
-          <h2 className="text-3xl font-light text-foreground">Contact</h2>
-          <div className="flex flex-wrap gap-4">
-            <a
-              href="mailto:bgracacoelho@gmail.com"
-              className="inline-flex items-center gap-2 px-6 py-3 bg-card border border-border rounded-lg hover:bg-secondary hover:border-primary transition-all group"
-            >
-              <Mail className="w-5 h-5 text-muted-foreground group-hover:text-primary transition-colors" />
-              <span className="font-medium text-foreground group-hover:text-primary transition-colors">Email</span>
-            </a>
-            <a
-              href="https://www.linkedin.com/in/bgracacoelho/"
-              target="_blank"
-              rel="noopener noreferrer"
-              className="inline-flex items-center gap-2 px-6 py-3 bg-card border border-border rounded-lg hover:bg-secondary hover:border-primary transition-all group"
-            >
-              <Linkedin className="w-5 h-5 text-muted-foreground group-hover:text-primary transition-colors" />
-              <span className="font-medium text-foreground group-hover:text-primary transition-colors">LinkedIn</span>
-            </a>
-            <a
-              href="https://github.com/bgcoelho"
-              target="_blank"
-              rel="noopener noreferrer"
-              className="inline-flex items-center gap-2 px-6 py-3 bg-card border border-border rounded-lg hover:bg-secondary hover:border-primary transition-all group"
-            >
-              <Github className="w-5 h-5 text-muted-foreground group-hover:text-primary transition-colors" />
-              <span className="font-medium text-foreground group-hover:text-primary transition-colors">GitHub</span>
-            </a>
           </div>
         </section>
 
