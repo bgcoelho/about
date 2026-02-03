@@ -9,6 +9,7 @@ import Home from "./pages/Home";
 import PromptLibrary from "./pages/PromptLibrary";
 import EarningsCalculator from "./pages/EarningsCalculator";
 import UnderwritingRisk from "./pages/UnderwritingRisk";
+import MlToolkit from "./pages/MlToolkit";
 import AlphaAnalytics from "./pages/AlphaAnalytics";
 import DataExtractor from "./pages/DataExtractor";
 import NotFound from "./pages/NotFound";
@@ -38,6 +39,7 @@ const App = () => (
           <Route path="/prompts" element={<PromptLibrary />} />
           <Route path="/earnings-calculator" element={<EarningsCalculator />} />
           <Route path="/underwriting-risk" element={<UnderwritingRisk />} />
+          <Route path="/ml-toolkit" element={<MlToolkit />} />
           <Route path="/alpha-analytics" element={<AlphaAnalytics />} />
           <Route path="/data-extractor" element={<DataExtractor />} />
           {/* Catch-all route */}

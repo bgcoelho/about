@@ -10,21 +10,33 @@ const Home = () => {
       title: "AI/LLM-based adjusted earnings calculator & predictor",
       description: "AI-based solution that reviews financial statements, extracts relevant information, calculates adjusted earnings over 10 years timeline and projects future earnings",
       link: "/earnings-calculator",
+      githubLink: "https://github.com/bgcoelho/ai_earnings_predictor",
     },
     {
-      title: "AI/ML-based Stock's alpha (excess returns) analytics/predictor",
+      title: "AI/LLM-based Stock's alpha (excess returns) analytics/predictor",
       description: "AI based solution that performs firm analysis and provides concise investment advice, based on public return information determines alpha and beta, reviews SEC 10Ks and strategic/market analysis",
       link: "/alpha-analytics",
+      githubLink: "https://github.com/bgcoelho/ai-alpha-analytics",
     },
     {
-      title: "AI/LLM-based solution that extracts data from unstructured email/documents",
-      description: "AI-based solution that reads email content/unstructured data from UWRs communications with back office support teams. Reconciles reviewed submission/bind data database data",
-      link: "/data-extractor",
+      title: "Machine learning (ML) toolkit",
+      description: "From ML in Finance and my own studies, please access here the collection of concepts, methods, models, algorithms, and tools that you may use to solve data-driven problems.",
+      link: "/ml-toolkit",
+      githubLink: "https://github.com/bgcoelho/ml-toolkit",
+    },
+  ];
+
+  const designProjects = [
+    {
+      title: "Learning/ enablement coach",
+      description: "Powered by FIGMA",
+      link: "#",
+      figmaLink: "https://life-pascal-99109425.figma.site/",
     },
     {
-      title: "AI/LLM-based Insurance Underwriting (UWR) risk decision engine",
-      description: "AI-based insurance Underwriting (UWR) risk engine that uses user key information, enhanced with internal databases and public information to assess risk",
-      link: "/underwriting-risk",
+      title: "Data analytics buddy",
+      description: "Powered by FIGMA",
+      link: "#",
     },
   ];
 
@@ -37,27 +49,27 @@ const Home = () => {
     {
       title: "Masters in Communication Network Engineering",
       institution: "University of Lisbon - Lisbon Tech (IST)",
-      description: "Concentrations in Wireless Sensor Networks, with research/work published on SENSORNETS 2014: LA6-Local Aggregation in the IoT",
+      description: "Concentrations in Wireless Sensor Networks. Publication: SENSORNETS 2014: LA6-Local Aggregation in the IoT",
     },
   ];
 
   const certifications = [
     { name: "Microsoft Azure", details: "Azure Fundamentals (AZ-900), Azure AI Fundamentals (AI-900)" },
-    { name: "Databricks", details: "Databricks Lakehouse Fundamentals; Databricks Machine Learning Associate" },
+    { name: "Databricks", details: "Databricks Lakehouse Fundamentals; Databricks ML Associate" },
     { name: "Amazon Web Services", details: "AWS Certified Cloud Practitioner (CLF-C02)" },
-    { name: "Google Cloud", details: "Cloud Computing Fundamentals; Infrastructure in Google Cloud; Networking and Security in Google Cloud; Data, ML, and AI in Google Cloud" },
-    { name: "PMI, PMP", details: "Project Management Professional" },
+    { name: "Google Cloud", details: "Cloud Computing Fundamentals; Data, ML, and AI in Google Cloud" },
+    { name: "PMP - Project Management Professional", details: "" },
   ];
 
   return (
     <div className="min-h-screen bg-background">
       <Navigation />
       
-      <main className="max-w-4xl mx-auto px-6 pt-6 pb-12 space-y-10">
+      <main className="max-w-4xl mx-auto px-6 pt-6 pb-12 space-y-6">
         {/* Hero Section */}
         <section className="flex items-start justify-between gap-8 flex-wrap">
           <div className="space-y-4 flex-1 min-w-[300px]">
-            <h1 className="text-5xl md:text-6xl font-light text-foreground tracking-tight">
+            <h1 className="text-4xl md:text-5xl font-light text-foreground tracking-tight">
               Bruno Graca Coelho
             </h1>
             <p className="text-xl text-muted-foreground max-w-2xl">
@@ -68,7 +80,7 @@ const Home = () => {
             <img 
               src={profilePhoto} 
               alt="Bruno Graca Coelho" 
-              className="w-24 h-32 object-cover object-top rounded-lg shadow-md"
+              className="w-20 h-28 object-cover object-top rounded-lg shadow-md"
             />
           </div>
         </section>
@@ -85,9 +97,19 @@ const Home = () => {
 
         {/* Projects Section */}
         <section className="space-y-4">
-          <h2 className="text-3xl font-light text-foreground">AI Product portfolio & experiments</h2>
+          <h2 className="text-3xl font-light text-foreground">LLM/ ML based product experiments</h2>
           <div className="grid gap-4">
             {projects.map((project, index) => (
+              <ProjectCard key={index} {...project} />
+            ))}
+          </div>
+        </section>
+
+        {/* Design Projects Section */}
+        <section className="space-y-4">
+          <h2 className="text-3xl font-light text-foreground">Product design/ prototyping experiments</h2>
+          <div className="grid gap-4">
+            {designProjects.map((project, index) => (
               <ProjectCard key={index} {...project} />
             ))}
           </div>
@@ -99,12 +121,12 @@ const Home = () => {
           <div className="space-y-4">
             {academics.map((academic, index) => (
               <Card key={index} className="bg-card border-border">
-                <CardContent className="py-4 px-5">
-                  <h3 className="text-lg font-semibold text-foreground mb-1">
+                <CardContent className="py-2 px-4">
+                  <h3 className="text-base font-semibold text-foreground mb-0.5">
                     {academic.title}
                   </h3>
-                  <p className="text-base text-primary mb-2">{academic.institution}</p>
-                  <p className="text-sm text-muted-foreground">{academic.description}</p>
+                  <p className="text-sm text-primary mb-1">{academic.institution}</p>
+                  <p className="text-xs text-muted-foreground">{academic.description}</p>
                 </CardContent>
               </Card>
             ))}
@@ -117,14 +139,45 @@ const Home = () => {
           <div className="grid md:grid-cols-2 gap-4">
             {certifications.map((cert, index) => (
               <Card key={index} className="bg-card border-border">
-                <CardContent className="py-4 px-5">
-                  <h3 className="text-base font-semibold text-foreground mb-1">
+                <CardContent className="py-2 px-4">
+                  <h3 className="text-sm font-semibold text-foreground mb-0.5">
                     {cert.name}
                   </h3>
-                  <p className="text-sm text-muted-foreground">{cert.details}</p>
+                  <p className="text-xs text-muted-foreground">{cert.details}</p>
                 </CardContent>
               </Card>
             ))}
+          </div>
+        </section>
+
+        {/* Readings Section */}
+        <section className="space-y-4">
+          <h2 className="text-3xl font-light text-foreground">Most recent readings</h2>
+          <div className="grid md:grid-cols-3 gap-4">
+            <Card className="bg-card border-border">
+              <CardContent className="py-2 px-4">
+                <h3 className="text-sm font-semibold text-foreground mb-0.5">
+                  Mismatch
+                </h3>
+                <p className="text-xs text-muted-foreground">How inclusion shapes design by Kat Holmes</p>
+              </CardContent>
+            </Card>
+            <Card className="bg-card border-border">
+              <CardContent className="py-2 px-4">
+                <h3 className="text-sm font-semibold text-foreground mb-0.5">
+                  To sell is human
+                </h3>
+                <p className="text-xs text-muted-foreground">by Daniel H. Pink</p>
+              </CardContent>
+            </Card>
+            <Card className="bg-card border-border">
+              <CardContent className="py-2 px-4">
+                <h3 className="text-sm font-semibold text-foreground mb-0.5">
+                  The Startup owner's manual
+                </h3>
+                <p className="text-xs text-muted-foreground">by Steve Blank & Bob Dorf</p>
+              </CardContent>
+            </Card>
           </div>
         </section>
 
@@ -133,16 +186,16 @@ const Home = () => {
           <h2 className="text-3xl font-light text-foreground">Resources</h2>
           <div className="space-y-4">
             <Card className="bg-card border-border hover:shadow-md transition-shadow">
-              <CardContent className="py-4 px-5">
-                <h3 className="text-lg font-semibold text-foreground mb-2">
+              <CardContent className="py-3 px-4">
+                <h3 className="text-base font-semibold text-foreground mb-1">
                   My Prompt Library
                 </h3>
-                <p className="text-sm text-muted-foreground mb-4">
+                <p className="text-sm text-muted-foreground mb-2">
                   Curated collection of AI and LLM prompts for data, strategy, and product applications
                 </p>
                 <Link
                   to="/prompts"
-                  className="inline-flex items-center gap-2 text-primary hover:text-primary/80 transition-colors font-medium"
+                  className="inline-flex items-center gap-2 text-primary hover:text-primary/80 transition-colors font-medium text-sm"
                 >
                   <span>Explore Prompts</span>
                   <span>→</span>
@@ -150,18 +203,18 @@ const Home = () => {
               </CardContent>
             </Card>
             <Card className="bg-card border-border hover:shadow-md transition-shadow">
-              <CardContent className="py-4 px-5">
-                <h3 className="text-lg font-semibold text-foreground mb-2">
+              <CardContent className="py-3 px-4">
+                <h3 className="text-base font-semibold text-foreground mb-1">
                   SENSORNETS 2014: LA6-Local Aggregation in the IoT
                 </h3>
-                <p className="text-sm text-muted-foreground mb-4">
+                <p className="text-sm text-muted-foreground mb-2">
                   Research publication on wireless sensor networks and local aggregation techniques for Internet of Things applications
                 </p>
                 <a
                   href="https://www.scitepress.org/Papers/2014/47104/"
                   target="_blank"
                   rel="noopener noreferrer"
-                  className="inline-flex items-center gap-2 text-primary hover:text-primary/80 transition-colors font-medium"
+                  className="inline-flex items-center gap-2 text-primary hover:text-primary/80 transition-colors font-medium text-sm"
                 >
                   <span>View Publication</span>
                   <span>→</span>

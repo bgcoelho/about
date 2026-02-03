@@ -7,9 +7,11 @@ interface ProjectCardProps {
   description: string;
   link: string;
   icon?: string;
+  githubLink?: string;
+  figmaLink?: string;
 }
 
-export const ProjectCard = ({ title, description, link, icon }: ProjectCardProps) => {
+export const ProjectCard = ({ title, description, link, icon, githubLink, figmaLink }: ProjectCardProps) => {
   const isExternal = link.startsWith("http");
 
   const content = (
@@ -20,7 +22,7 @@ export const ProjectCard = ({ title, description, link, icon }: ProjectCardProps
         </div>
       )}
       <div className="flex-1 min-w-0">
-        <div className="flex items-center gap-2 mb-2">
+        <div className="flex items-center gap-2 mb-1">
           <h3 className="text-base font-semibold text-foreground group-hover:text-primary transition-colors">
             {title}
           </h3>
@@ -38,8 +40,32 @@ export const ProjectCard = ({ title, description, link, icon }: ProjectCardProps
   );
 
   return (
-    <Card className="group hover:shadow-lg transition-all duration-300 hover:-translate-y-1 bg-card border-border">
-      <CardContent className="p-6">
+    <Card className="group hover:shadow-lg transition-all duration-300 hover:-translate-y-1 bg-card border-border relative">
+      {githubLink && (
+        <a
+          href={githubLink}
+          target="_blank"
+          rel="noopener noreferrer"
+          className="absolute top-2 right-3 inline-flex items-center gap-1 text-xs text-muted-foreground hover:text-primary transition-colors z-10"
+          onClick={(e) => e.stopPropagation()}
+        >
+          <ExternalLink className="w-3 h-3" />
+          <span>View on GitHub</span>
+        </a>
+      )}
+      {figmaLink && (
+        <a
+          href={figmaLink}
+          target="_blank"
+          rel="noopener noreferrer"
+          className="absolute top-2 right-3 inline-flex items-center gap-1 text-xs text-muted-foreground hover:text-primary transition-colors z-10"
+          onClick={(e) => e.stopPropagation()}
+        >
+          <ExternalLink className="w-3 h-3" />
+          <span>View on Figma</span>
+        </a>
+      )}
+      <CardContent className="py-3 px-4">
         {isExternal ? (
           <a
             href={link}
